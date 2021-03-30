@@ -1,0 +1,154 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.Topbar {
+  width: 100%; /* We use width to return the whole bar to 100% after setting fixed position */
+  background-color: #282c34;
+  padding: 24px 48px 12px;
+  text-align: center; /* Brings the logo to the center */
+
+  /* We have to fix the top bar at the top using these styles */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.Topbar > img {
+  width: 100px;
+}
+
+/* We will style main container div to span two columns*/
+.MainContainer {
+  padding: 4% 12px;
+  margin-top: 32px;
+  box-sizing: border-box; /* add a box sizing to prevent it going out of screen */
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+/* End of main container styling */
+
+/* productpreview and its children styles */
+.ProductPreview {
+  width: 50%;
+  position: relative; /* We make it relative so we may add in display */
+}
+
+.ProductPreview > img {
+  width: 100%; /*The image will take all the div available width */
+}
+.TimeSection {
+  position: absolute; /*  */
+  top: 50%; /*  */
+  left: 50%; /* Makes its start from the center */
+  transform: translate(-50%, -50%);
+
+  color: white;
+  font-size: 48px;
+  font-weight: 600;
+}
+.HeartBeatSection {
+  position: absolute; /*  */
+  top: 50%; /*  */
+  left: 50%; /* Makes its start from the center */
+  transform: translate(-50%, -50%);
+
+  color: white;
+  font-size: 48px;
+  font-weight: 600;
+}
+.HeartBeatSection > i {
+  color: red;
+  /* Add the annimation using the animation keyword, then the name, duration and number of times */
+  animation: beat 1s infinite;
+}
+
+/* Adding some keyframes for the animation */
+@keyframes beat {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+
+  0% {
+    transform: scale(1, 1);
+  }
+}
+
+.HeartBeatSection > p {
+  margin-top: 16px;
+}
+
+/* End of product preview styles */
+
+/* Product data and children styles */
+.ProductData {
+  width: 50%;
+}
+.ProductTitle {
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.ProductDescription {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.SectionHeading {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.ProductImage {
+  width: 100px;
+  max-width: 80px;
+
+  border: 2px solid transparent;
+  border-radius: 8px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.SelectedProductImage {
+  border: 2px solid teal;
+}
+
+.FeatureItem {
+  min-width: 80px;
+  background-color: gainsboro;
+  border-radius: 8px;
+  border: 0;
+  text-align: center;
+  margin-right: 12px;
+  cursor: pointer;
+  box-sizing: content-box;
+
+  padding: 12px 24px;
+  font-weight: 700;
+}
+
+.SelectedFeatureItem {
+  color: white;
+  background-color: grey;
+}
+
+.PrimaryButton {
+  color: white;
+  background-color: teal;
+  font-size: 20px;
+  border-radius: 8px;
+  border: 0;
+  margin-top: 36px;
+
+  padding: 12px 24px;
+}
