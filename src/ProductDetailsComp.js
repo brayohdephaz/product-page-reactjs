@@ -1,20 +1,38 @@
 import React from "react";
 import classes from "./ProductDetails.module.css";
-import ProductData from "./ProductData";
+// import ProductData from "./ProductData";
 
 const ProductDetailsComp = (props) => {
+  // Inside our data up we have color property that is passed as an array..so we can get the data by
+
+  const colorOptions = props.data.colorOptions.map((item, pos) => {
+    return (
+      <img
+        key={pos}
+        className={[classes.ProductImage, classes.SelectedProductImage].join(
+          " "
+        )}
+        src={item.imageUrl}
+        alt={item.styleName}
+      />
+    );
+  });
   return (
     /* CREATE A NEW Column THAT WILL HOLD THE PRODUCT DESCRIPTION */
+    // We will use the props to call the data prop passed from the appjs inside the productDetails tag - passing data from parent component to child component
+
     <div className={classes.ProductData}>
-      <h1>{ProductData.title}</h1>
-      <p className={classes.ProductDescription}>{ProductData.description}</p>
+      <h1>{props.data.title}</h1>
+      <p className={classes.ProductDescription}>{props.data.description}</p>
 
       {/* COlor section */}
       <h3 className={classes.SectionHeading}>Select Color</h3>
       {/* Color image wrapper */}
       <div>
         {/* To add another class in our element image we have to put the classes in an array and use the join() method to convert them to string  */}
-        <img
+        {/* Calling the spitted data from the array */}
+        {colorOptions}
+        {/* <img
           className={[classes.ProductImage, classes.SelectedProductImage].join(
             " "
           )}
@@ -35,7 +53,7 @@ const ProductDetailsComp = (props) => {
           className={classes.ProductImage}
           src="https://imgur.com/xSIK4M8.png"
           alt="Purple Color watch"
-        />
+        /> */}
       </div>
       {/* End of color image wrapper */}
 

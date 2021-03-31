@@ -16,7 +16,6 @@ const ProductPreview = (props) => {
     <div className={classes.ProductPreview}>
       <img src="https://imgur.com/iOeUBV7.png" alt="Product preview" />
       {/* /* We had a division that has content that displays in Heart and time in it */}
-      /*{" "}
       <div className={classes.TimeSection}>
         <p>{`${curretHour}:${curretMinute}`}</p>
       </div>
