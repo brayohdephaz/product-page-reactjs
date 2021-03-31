@@ -1,0 +1,15 @@
+.Topbar {
+  width: 100%; /* We use width to return the whole bar to 100% after setting fixed position */
+  background-color: #282c34;
+  padding: 24px 48px 12px;
+  text-align: center; /* Brings the logo to the center */
+
+  /* We have to fix the top bar at the top using these styles */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.Topbar > img {
+  width: 100px;
+}

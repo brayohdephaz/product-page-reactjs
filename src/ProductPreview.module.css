@@ -1,0 +1,55 @@
+/* productpreview and its children styles */
+.ProductPreview {
+  width: 100%;
+  position: relative; /* We make it relative so we may add in display */
+}
+
+.ProductPreview > img {
+  width: 100%; /*The image will take all the div available width */
+}
+.TimeSection {
+  position: absolute; /*  */
+  top: 50%; /*  */
+  left: 50%; /* Makes its start from the center */
+  transform: translate(-50%, -50%);
+
+  color: white;
+  font-size: 48px;
+  font-weight: 600;
+}
+.HeartBeatSection {
+  position: absolute; /*  */
+  top: 50%; /*  */
+  left: 50%; /* Makes its start from the center */
+  transform: translate(-50%, -50%);
+
+  color: white;
+  font-size: 48px;
+  font-weight: 600;
+}
+.HeartBeatSection > i {
+  color: red;
+  /* Add the annimation using the animation keyword, then the name, duration and number of times */
+  animation: beat 1s infinite;
+}
+
+/* Adding some keyframes for the animation */
+@keyframes beat {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+
+  0% {
+    transform: scale(1, 1);
+  }
+}
+
+.HeartBeatSection > p {
+  margin-top: 16px;
+}
+
+/* End of product preview styles */
