@@ -1,5 +1,5 @@
 import React from "react";
-import amazon from "./amazon.png"; // Importing an image from my local storage.
+import amazon from "../../Utilities/amazon.png"; // Importing an image from my local storage.
 import classes from "./Topbar.module.css";
 
 const TopbarComp = () => {
