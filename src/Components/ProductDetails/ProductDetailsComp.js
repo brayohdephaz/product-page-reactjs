@@ -27,11 +27,15 @@ const ProductDetailsComp = (props) => {
   const featureList = props.data.featureList.map((item, pos) => {
     const classArr = [classes.FeatureItem];
     // If pos is the first element
-    if (pos === 0) {
+    if (pos === props.currentFeaturedList) {
       classArr.push(classes.SelectedFeatureItem);
     }
     return (
-      <button key={pos} className={classArr.join(" ")}>
+      <button
+        key={pos}
+        className={classArr.join(" ")}
+        onClick={() => props.onFeaturedListClick(pos)}
+      >
         {item}
       </button>
     );

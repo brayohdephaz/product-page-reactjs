@@ -11,9 +11,9 @@ import TopbarComp from "./Components/ToolBar/TopbarComp";
 class App extends Component {
   state = {
     ProductData: ProductData, //We setting a new state and setting it to our object from  Product data
-    currentImagePriview: "https://imgur.com/PTgQlim.png", //Defined our image here at the state
+    // currentImagePriview: "https://imgur.com/PTgQlim.png", //Defined our image here at the state
+    currentFeaturedList: 0,
     currentImagePosition: 0,
-    showHeartBeat: true,
     curretHour:
       new Date().getHours() > 9
         ? new Date().getHours()
@@ -26,13 +26,11 @@ class App extends Component {
 
   // Creating a function that updates the current Image when selected color is clicked
   onColorOptionClick = (pos) => {
-    // const updatedImagePreview = this.state.ProductData.colorOptions[pos]
-    //   .imageUrl;
-    // console.log(updatedImagePreview);
-    // this.setState({ currentImagePriview: updatedImagePreview });
     this.setState({ currentImagePosition: pos });
   };
-  onColorOptionSelected = (pos) => {};
+  onFeaturedListClick = (pos) => {
+    this.setState({ currentFeaturedList: pos });
+  };
 
   render() {
     return (
@@ -50,7 +48,7 @@ class App extends Component {
                   this.state.currentImagePosition
                 ].imageUrl
               }
-              showHeartBeat={this.state.showHeartBeat}
+              currentFeaturedList={this.state.currentFeaturedList}
               curretHour={this.state.curretHour}
               curretMinute={this.state.curretMinute}
             />
@@ -60,6 +58,8 @@ class App extends Component {
               data={this.state.ProductData}
               onColorOptionClick={this.onColorOptionClick}
               currentImagePosition={this.state.currentImagePosition}
+              currentFeaturedList={this.state.currentFeaturedList}
+              onFeaturedListClick={this.onFeaturedListClick}
             />
           </div>
         </div>

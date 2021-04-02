@@ -12,7 +12,7 @@ const ProductPreview = (props) => {
       We will render the two under a condation
        */}
 
-      {props.showHeartBeat === true ? (
+      {props.currentFeaturedList === 1 ? (
         <div className={classes.HeartBeatSection}>
           <i className="fas fa-heartbeat"></i>
           <p>78</p>
