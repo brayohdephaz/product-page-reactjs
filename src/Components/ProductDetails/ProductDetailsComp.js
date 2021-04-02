@@ -9,7 +9,7 @@ const ProductDetailsComp = (props) => {
     // We will declare a new variable that carries custom css for the product image
     const classArr = [classes.ProductImage];
     // The new variable classArr is appended when the key value is pos=== 0 .
-    if (pos === 0) {
+    if (pos === props.currentImagePosition) {
       classArr.push(classes.SelectedProductImage);
     }
 
@@ -19,6 +19,7 @@ const ProductDetailsComp = (props) => {
         className={classArr.join(" ")}
         src={item.imageUrl}
         alt={item.styleName}
+        onClick={() => props.onColorOptionClick(pos)} //We create an anonymous function on the onclick method so it doesn't trigger the method outomatically
       />
     );
   });

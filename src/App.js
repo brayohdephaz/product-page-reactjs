@@ -12,6 +12,7 @@ class App extends Component {
   state = {
     ProductData: ProductData, //We setting a new state and setting it to our object from  Product data
     currentImagePriview: "https://imgur.com/PTgQlim.png", //Defined our image here at the state
+    currentImagePosition: 0,
     showHeartBeat: true,
     curretHour:
       new Date().getHours() > 9
@@ -22,6 +23,16 @@ class App extends Component {
         ? new Date().getMinutes()
         : "0" + new Date().getMinutes(),
   };
+
+  // Creating a function that updates the current Image when selected color is clicked
+  onColorOptionClick = (pos) => {
+    // const updatedImagePreview = this.state.ProductData.colorOptions[pos]
+    //   .imageUrl;
+    // console.log(updatedImagePreview);
+    // this.setState({ currentImagePriview: updatedImagePreview });
+    this.setState({ currentImagePosition: pos });
+  };
+  onColorOptionSelected = (pos) => {};
 
   render() {
     return (
@@ -34,14 +45,22 @@ class App extends Component {
           {/* Product preview */}
           <div className={classes.ProductPreview}>
             <ProductPreview
-              currentImagePriview={this.state.currentImagePriview}
+              currentImagePriview={
+                this.state.ProductData.colorOptions[
+                  this.state.currentImagePosition
+                ].imageUrl
+              }
               showHeartBeat={this.state.showHeartBeat}
               curretHour={this.state.curretHour}
               curretMinute={this.state.curretMinute}
             />
           </div>
           <div className={classes.ProductData}>
-            <ProductDetailsComp data={this.state.ProductData} />
+            <ProductDetailsComp
+              data={this.state.ProductData}
+              onColorOptionClick={this.onColorOptionClick}
+              currentImagePosition={this.state.currentImagePosition}
+            />
           </div>
         </div>
       </div>
