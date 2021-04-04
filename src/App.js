@@ -32,7 +32,17 @@ class App extends Component {
     this.setState({ currentFeaturedList: pos });
   };
 
+  // We add a lifecycle method shouldComponentUpdate(nextProps, nextState) that checks a condition on the color picker current position and decides whether to rerender the component or not
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("Inside rerender method");
+    if (nextState.currentImagePosition === this.state.currentImagePosition) {
+      return false;
+    }
+    return true;
+  }
+
   render() {
+    console.log("Rendering Appjs");
     return (
       <div className="App">
         {/* TOPBAR GOES HERE */}
